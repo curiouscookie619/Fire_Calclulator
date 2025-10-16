@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: fire-calculator
+    env: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: ./app_entry.sh
+    autoDeploy: true
+    envVars:
+      - key: PYTHONUNBUFFERED
+        value: "1"
+      - key: PORT
+        value: "8501"
